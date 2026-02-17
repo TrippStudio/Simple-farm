@@ -1,0 +1,213 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+header {
+  padding: 16px;
+  border-bottom: 1px solid rgba(226,232,240,.15);
+}
+
+h1 { margin: 0 0 12px 0; font-size: 22px; }
+
+.hud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.stats {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tools { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.tool {
+  background: #334155;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #e2e8f0;
+}
+
+.tool.active {
+  outline: 2px solid rgba(226,232,240,.6);
+}
+
+.active-seed { opacity: .9; }
+
+.save-indicator {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.save-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.save-dot.saving {
+  background: #f59e0b;
+  transform: scale(1.2);
+}
+
+/* Market bar */
+.market-bar {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(226,232,240,.15);
+  border-radius: 14px;
+  background: rgba(255,255,255,.03);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.market-label { opacity: .9; font-weight: 800; }
+.market-spacer { flex: 1; }
+
+.market-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(226,232,240,.2);
+  font-size: 13px;
+  opacity: .95;
+  white-space: nowrap;
+}
+
+.market-pill.featured { background: rgba(34,197,94,.12); }
+.market-pill.slump { background: rgba(239,68,68,.10); }
+
+.market-timer {
+  opacity: .85;
+  font-size: 13px;
+}
+
+/* Orchard bar */
+.orchard-bar{
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(226,232,240,.15);
+  border-radius: 14px;
+  background: rgba(255,255,255,.03);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.orchard-label { opacity:.9; font-weight:800; }
+.orchard-spacer { flex:1; }
+
+.mono {
+  font-variant-numeric: tabular-nums;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+main { padding: 16px; }
+.hint { opacity: .8; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 70px);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.plot {
+  width: 70px;
+  height: 70px;
+  border-radius: 14px;
+  border: 1px solid rgba(226,232,240,.18);
+  background: #1f2937;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Soil states */
+.state-empty { background: #1f2937; }
+.state-growing { background: #1b4332; }
+.state-ready { background: #14532d; }
+.state-watered1 { background: #0b3b2e; }
+.state-watered2 { background: #06261d; }
+
+/* Orchard styling (distinct but subtle) */
+.orchard-tile {
+  border-color: rgba(34,197,94,.35);
+  box-shadow: 0 0 0 1px rgba(34,197,94,.10) inset;
+}
+.orchard-empty { background: #142032; }
+.orchard-growing { background: #123022; }
+.orchard-ready { background: #0f3b25; }
+.orchard-watered1 { background: #0b2f26; }
+.orchard-watered2 { background: #08211c; }
+
+.state-well { background: #0b1220; }
+
+.panel {
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid rgba(226,232,240,.15);
+  border-radius: 14px;
+  background: rgba(255,255,255,.03);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.card {
+  border: 1px solid rgba(226,232,240,.15);
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255,255,255,.02);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.small {
+  opacity: .85;
+  font-size: 13px;
+}
+
+.btn {
+  background: #22c55e;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  color: #0b1220;
+}
+
+.btn.secondary { background: #334155; color: #e2e8f0; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(226,232,240,.2);
+  font-size: 12px;
+}
